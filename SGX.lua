@@ -1,5 +1,5 @@
---     BEAUTIFUL RED ♥️ SPLASH SCREEN - FINAL CLEAN VERSION
---     No Close Button | Auto 5 Sec Fade Out | Super Beautiful Fonts & Colors
+-- BEAUTIFUL BLUE 💙 SPLASH SCREEN - FINAL CLEAN VERSION
+-- No Close Button | Auto 5 Sec Fade Out | Super Beautiful Fonts & Colors
 -- ====================================================
 
 local TweenService = game:GetService("TweenService")
@@ -7,7 +7,7 @@ local TweenService = game:GetService("TweenService")
 task.wait(0.4)
 
 -- ====================================================
--- Create ScreenGui (CoreGui mein for full screen effect)
+-- Create ScreenGui
 -- ====================================================
 local splashGui = Instance.new("ScreenGui")
 splashGui.Name = "LeoXBeautifulSplash"
@@ -15,50 +15,50 @@ splashGui.IgnoreGuiInset = true
 splashGui.ResetOnSpawn = false
 splashGui.Parent = game:GetService("CoreGui")
 
--- Main Frame - Ultra beautiful dark romantic red base
+-- Main Frame - Deep luxurious blue-black
 local mainFrame = Instance.new("Frame")
 mainFrame.Size = UDim2.new(1, 0, 1, 0)
-mainFrame.BackgroundColor3 = Color3.fromRGB(25, 0, 8)   -- deep luxurious red-black
-mainFrame.BackgroundTransparency = 0.35
+mainFrame.BackgroundColor3 = Color3.fromRGB(5, 12, 28) -- deep navy black
+mainFrame.BackgroundTransparency = 0.28
 mainFrame.BorderSizePixel = 0
 mainFrame.Parent = splashGui
 
--- Premium Gradient - red rose to soft crimson glow
+-- Premium Gradient - icy blue → electric cyan → soft violet
 local uiGradient = Instance.new("UIGradient")
 uiGradient.Color = ColorSequence.new{
-    ColorSequenceKeypoint.new(0,   Color3.fromRGB(190, 30, 70)),   -- rich rose
-    ColorSequenceKeypoint.new(0.4, Color3.fromRGB(255, 90, 130)),  -- vibrant heart red
-    ColorSequenceKeypoint.new(0.7, Color3.fromRGB(220, 60, 100)),  -- warm crimson
-    ColorSequenceKeypoint.new(1,   Color3.fromRGB(190, 30, 70))
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(30, 90, 220)),      -- rich royal blue
+    ColorSequenceKeypoint.new(0.35, Color3.fromRGB(0, 200, 255)),   -- bright cyan
+    ColorSequenceKeypoint.new(0.7, Color3.fromRGB(80, 140, 255)),   -- soft electric blue
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(40, 70, 200))
 }
-uiGradient.Rotation = 120
-uiGradient.Transparency = NumberSequence.new(0.3)
+uiGradient.Rotation = 125
+uiGradient.Transparency = NumberSequence.new(0.25)
 uiGradient.Parent = mainFrame
 
--- Elegant glow border
+-- Elegant glowing border
 local uiStroke = Instance.new("UIStroke")
-uiStroke.Color = Color3.fromRGB(255, 140, 180)
-uiStroke.Transparency = 0.45
+uiStroke.Color = Color3.fromRGB(100, 210, 255) -- soft cyan glow
+uiStroke.Transparency = 0.35
 uiStroke.Thickness = 5.5
 uiStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 uiStroke.Parent = mainFrame
 
--- Super smooth rounded corners
+-- Smooth rounded corners
 local uiCorner = Instance.new("UICorner")
 uiCorner.CornerRadius = UDim.new(0, 32)
 uiCorner.Parent = mainFrame
 
--- Big Beautiful Title - LeoX ♥️
+-- Big Beautiful Title
 local title = Instance.new("TextLabel")
 title.Size = UDim2.new(0.92, 0, 0.42, 0)
 title.Position = UDim2.new(0.04, 0, 0.18, 0)
 title.BackgroundTransparency = 1
-title.Text = "M3GUN ♥️"
-title.TextColor3 = Color3.fromRGB(255, 160, 190)   -- soft glowing pink-red
+title.Text = "M3GUN 💙"
+title.TextColor3 = Color3.fromRGB(160, 230, 255) -- soft glowing cyan-white
 title.TextScaled = true
-title.Font = Enum.Font.FredokaOne                 -- rounded, cute & premium
-title.TextStrokeTransparency = 0.55
-title.TextStrokeColor3 = Color3.fromRGB(180, 20, 70)
+title.Font = Enum.Font.FredokaOne
+title.TextStrokeTransparency = 0.5
+title.TextStrokeColor3 = Color3.fromRGB(0, 100, 200)
 title.Parent = mainFrame
 
 -- Elegant Subtitle
@@ -67,62 +67,66 @@ subtitle.Size = UDim2.new(0.82, 0, 0.14, 0)
 subtitle.Position = UDim2.new(0.09, 0, 0.54, 0)
 subtitle.BackgroundTransparency = 1
 subtitle.Text = "Squid Game X • Free Guy"
-subtitle.TextColor3 = Color3.fromRGB(255, 210, 230)
+subtitle.TextColor3 = Color3.fromRGB(180, 230, 255)
 subtitle.TextScaled = true
-subtitle.Font = Enum.Font.GothamBlack             -- sharp & luxurious
-subtitle.TextStrokeTransparency = 0.75
+subtitle.Font = Enum.Font.GothamBlack
+subtitle.TextStrokeTransparency = 0.7
 subtitle.Parent = mainFrame
 
--- Heart-touching tagline
+-- Tagline
 local loveTag = Instance.new("TextLabel")
 loveTag.Size = UDim2.new(0.7, 0, 0.1, 0)
 loveTag.Position = UDim2.new(0.15, 0, 0.71, 0)
 loveTag.BackgroundTransparency = 1
-loveTag.Text = "Vision By SWAMM 💫♥️"
-loveTag.TextColor3 = Color3.fromRGB(255, 190, 210)
+loveTag.Text = "Vision By SWAMM 💫💙"
+loveTag.TextColor3 = Color3.fromRGB(140, 210, 255)
 loveTag.TextScaled = true
 loveTag.Font = Enum.Font.FredokaOne
-loveTag.TextStrokeTransparency = 0.8
+loveTag.TextStrokeTransparency = 0.75
 loveTag.Parent = mainFrame
 
 -- ====================================================
 -- ULTRA BEAUTIFUL ANIMATIONS
 -- ====================================================
-
 local tweenFast = TweenInfo.new(1.6, Enum.EasingStyle.Back, Enum.EasingDirection.Out)
-local tweenPulse = TweenInfo.new(2.4, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
+local tweenPulse = TweenInfo.new(2.6, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true)
 
 -- Fade + scale in
-TweenService:Create(mainFrame, tweenFast, {BackgroundTransparency = 0.35}):Play()
+TweenService:Create(mainFrame, tweenFast, {BackgroundTransparency = 0.28}):Play()
 TweenService:Create(title, tweenFast, {TextTransparency = 0}):Play()
 TweenService:Create(subtitle, tweenFast, {TextTransparency = 0}):Play()
 TweenService:Create(loveTag, tweenFast, {TextTransparency = 0}):Play()
 
--- Romantic heartbeat pulse on title
+-- Soft glowing pulse on title
 TweenService:Create(title, tweenPulse, {
-    TextTransparency = 0.08,
-    Rotation = 2.5,
+    TextTransparency = 0.1,
+    Rotation = 1.8,
     Size = UDim2.new(0.95, 0, 0.44, 0)
 }):Play()
 
+-- Extra soft glow pulse on stroke
+TweenService:Create(uiStroke, tweenPulse, {
+    Transparency = 0.15,
+    Thickness = 6.5
+}):Play()
+
 -- ====================================================
--- AUTO FADE OUT AFTER 5 SECONDS - No Button
+-- AUTO FADE OUT AFTER 5 SECONDS
 -- ====================================================
 task.delay(5, function()
     local fadeOut = TweenInfo.new(1.4, Enum.EasingStyle.Quint, Enum.EasingDirection.In)
-    
+
     TweenService:Create(mainFrame, fadeOut, {BackgroundTransparency = 1}):Play()
     TweenService:Create(title, fadeOut, {TextTransparency = 1}):Play()
     TweenService:Create(subtitle, fadeOut, {TextTransparency = 1}):Play()
     TweenService:Create(loveTag, fadeOut, {TextTransparency = 1}):Play()
-    
+    TweenService:Create(uiStroke, fadeOut, {Transparency = 1}):Play()
+
     task.delay(1.5, function()
         splashGui:Destroy()
-        print("Beautiful LeoX ♥️ Splash faded out perfectly!")
-        -- Yahan se tumhara Rayfield ya baaki script load kar sakte ho
+        print("Beautiful Blue Splash faded out perfectly!")
     end)
 end)
-
 
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -351,76 +355,128 @@ PlayerTab:CreateToggle({ Name = "📍 Player ESP", CurrentValue = false,
     end
 })
 
-----KILL ALL-------
-
-local Players = game.Players
+-- ================== IMPROVED KILL ALL + FRIEND PROTECTION ==================
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
 local LocalPlayer = Players.LocalPlayer
 
 local KillAllActive = false
 local FriendProtect = true
-
 local OriginalSizes = {}
 local Connections = {}
+local UpdateConnection = nil
 
-local function ApplyState(plr)
-    if plr == LocalPlayer or not plr.Character then return end
-    
+local function IsFriend(plr)
+    if not FriendProtect then return false end
+    local success, result = pcall(function()
+        return plr:IsFriendsWith(LocalPlayer.UserId)
+    end)
+    return success and result
+end
+
+local function ApplyHitbox(plr)
+    if plr == LocalPlayer then return end
+    if not plr.Character then return end
+
     local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
     if not hrp then return end
-    
+
+    -- Store original size only once
     if not OriginalSizes[plr] then
         OriginalSizes[plr] = hrp.Size
     end
-    
-    local isFriend = FriendProtect and plr:IsFriendsWith(LocalPlayer.UserId)
-    
+
     if KillAllActive then
-        if isFriend then
+        if IsFriend(plr) then
+            -- Friend → normal size
             hrp.Size = OriginalSizes[plr] or Vector3.new(2, 2, 1)
             hrp.CanCollide = true
         else
-            hrp.Size = Vector3.new(500, 500, 500)
+            -- Enemy → big hitbox
+            hrp.Size = Vector3.new(100, 100, 100)
             hrp.CanCollide = false
         end
     else
+        -- Kill All off
         hrp.Size = OriginalSizes[plr] or Vector3.new(2, 2, 1)
         hrp.CanCollide = true
     end
 end
 
 local function SetupPlayer(plr)
-    local charConn
-    charConn = plr.CharacterAdded:Connect(function(char)
-        local hrp = char:WaitForChild("HumanoidRootPart", 5)
+    if plr == LocalPlayer then return end
+
+    if Connections[plr] then
+        Connections[plr]:Disconnect()
+        Connections[plr] = nil
+    end
+
+    local charConn = plr.CharacterAdded:Connect(function(char)
+        local hrp = char:WaitForChild("HumanoidRootPart", 8)
         if hrp then
-            ApplyState(plr)
+            task.wait(0.1)
+            ApplyHitbox(plr)
         end
     end)
-    
-    if plr.Character then
-        task.spawn(function() ApplyState(plr) end)
-    end
-    
+
     Connections[plr] = charConn
+
+    if plr.Character then
+        task.spawn(function()
+            ApplyHitbox(plr)
+        end)
+    end
 end
 
-local playerAddedConn = Players.PlayerAdded:Connect(SetupPlayer)
+local function StartUpdateLoop()
+    if UpdateConnection then
+        UpdateConnection:Disconnect()
+    end
+
+    UpdateConnection = RunService.Heartbeat:Connect(function()
+        if not KillAllActive then return end
+
+        for _, plr in pairs(Players:GetPlayers()) do
+            if plr ~= LocalPlayer and plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then
+                ApplyHitbox(plr)
+            end
+        end
+    end)
+end
+
+Players.PlayerAdded:Connect(SetupPlayer)
+
+Players.PlayerRemoving:Connect(function(plr)
+    if Connections[plr] then
+        Connections[plr]:Disconnect()
+        Connections[plr] = nil
+    end
+    OriginalSizes[plr] = nil
+end)
 
 for _, plr in pairs(Players:GetPlayers()) do
-    if plr ~= LocalPlayer then
-        SetupPlayer(plr)
-    end
+    SetupPlayer(plr)
 end
+
+-- ================== GUI TOGGLES ==================
 
 PlayerTab:CreateToggle({
     Name = "All Kill 🔥",
     CurrentValue = false,
     Callback = function(value)
         KillAllActive = value
-        for _, plr in pairs(Players:GetPlayers()) do
-            if plr ~= LocalPlayer then
-                ApplyState(plr)
+
+        if value then
+            StartUpdateLoop()
+        else
+            if UpdateConnection then
+                UpdateConnection:Disconnect()
+                UpdateConnection = nil
             end
+        end
+
+        for _, plr in pairs(Players:GetPlayers()) do
+            ApplyHitbox(plr)
         end
     end
 })
@@ -430,23 +486,14 @@ PlayerTab:CreateToggle({
     CurrentValue = true,
     Callback = function(value)
         FriendProtect = value
+
         if KillAllActive then
             for _, plr in pairs(Players:GetPlayers()) do
-                if plr ~= LocalPlayer then
-                    ApplyState(plr)
-                end
+                ApplyHitbox(plr)
             end
         end
     end
 })
-
-Players.PlayerRemoving:Connect(function(plr)
-    if Connections[plr] then
-        Connections[plr]:Disconnect()
-        Connections[plr] = nil
-    end
-    OriginalSizes[plr] = nil
-end)
 
 -- ================== AUTO BABY PICKUP (INSTANT AT MY POSITION - NO TELEPORT) ==================
 local autoBabyInstantPickup = false
